@@ -1,0 +1,7 @@
+/build
+/sandbox
+/htmlcov
+/.coverage
+*.pyc
+/json_schema_helpers.egg-info
+/.test-deps-installed
