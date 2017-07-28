@@ -41,3 +41,14 @@ def ref(ref_id):
         Reference to type
     '''
     return {"$ref": "#/definitions/%s" % ref_id}
+
+
+def schema(schema_options, **kwargs):
+    s = {
+        "$schema": "http://json-schema.org/draft-04/schema#"
+    }
+
+    s.update(schema_options)
+    s.update(kwargs)
+
+    return s
