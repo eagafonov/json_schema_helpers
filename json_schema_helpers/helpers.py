@@ -5,7 +5,7 @@ type_null = dict(type="null")
 type_integer = dict(type="integer")
 type_number = dict(type="number")
 type_object = dict(type="object")
-type_list = dict(type="list")
+type_list = dict(type="array")  # Python clashed with JavaScript :-)
 type_boolean = dict(type="boolean")
 
 # Simple type or null
