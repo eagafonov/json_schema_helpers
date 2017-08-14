@@ -17,7 +17,7 @@ type_list_or_null = dict(oneOf=[type_list, type_null])
 type_boolean_or_null = dict(oneOf=[type_boolean, type_null])
 
 list_of_strings = dict(type="array", items=[{"type": "string"}])
-
+list_of_numbers = dict(type="array", items=[type_number])
 
 # Complex
 def list_of(ref, minItems=None, maxItems=None, exactItems=None):
