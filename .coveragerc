@@ -3,5 +3,6 @@ omit =
     sandbox/*
     *__init__.py
     src/*
+    /usr/local/*
 
 show_missing = True

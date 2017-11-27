@@ -2,7 +2,7 @@ all:
 
 test: .test-deps-installed
 	coverage erase
-	coverage run -m pytest -vv
+	coverage run -m pytest -vv tests
 	coverage report
 	coverage html
 

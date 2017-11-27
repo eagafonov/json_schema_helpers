@@ -1,4 +1,4 @@
-from json_schema_helpers import ref, list_of, type_null
+from json_schema_helpers import ref, list_of, type_null, type_list_or_null
 
 
 import json_schema_helpers
@@ -6,7 +6,7 @@ import json_schema_helpers
 
 class TestSimpleTypes:
     def test_simple_types(self):
-        types = ['string', 'null', 'integer', 'number', 'object', 'list', 'boolean']
+        types = ['string', 'null', 'integer', 'number', 'object', 'boolean']
 
         for t in types:
             assert hasattr(json_schema_helpers, 'type_%s' % t)
@@ -14,7 +14,7 @@ class TestSimpleTypes:
             assert dict(type=t) == f
 
     def test_simple_types_or_null(self):
-        types = ['string', 'integer', 'number', 'object', 'list', 'boolean']
+        types = ['string', 'integer', 'number', 'object', 'boolean']
 
         for t in types:
             assert hasattr(json_schema_helpers, 'type_%s_or_null' % t)
@@ -22,6 +22,11 @@ class TestSimpleTypes:
             expected = dict(oneOf=[dict(type=t), type_null])
 
             assert expected == f
+
+    def test_list_or_null(self):
+        assert type_list_or_null == dict(oneOf=[dict(type='array'), type_null])
+
+        assert dict(type='array', items=[ref('some_time')]) == list_of('some_time')
 
 
 class TestRef:
