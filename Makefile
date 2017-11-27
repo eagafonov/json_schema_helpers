@@ -10,5 +10,13 @@ test: .test-deps-installed
 	pip install -r requirements-test.txt
 	touch $@
 
+.examples-deps-installed: requirements-examples.txt
+	pip install -r requirements-examples.txt
+	touch $@
+
 flake8: .test-deps-installed
 	flake8
+	
+run_examples: .examples-deps-installed
+	python examples/simple.py
+

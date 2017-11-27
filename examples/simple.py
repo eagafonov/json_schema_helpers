@@ -1,12 +1,19 @@
 # Example with https://github.com/eagafonov/json_schema_helpers
 
+import json
+import jsonschema
+import pprint
+
+
 import json_schema_helpers as jsh
+
 
 heading_loc_schema = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "heading_loc object",
     "type": "object",
-    "additionalProperties": False, # properties must contains a complete list of supported languages
+    # properties must contains a complete list of supported languages
+    "additionalProperties": False,
     "properties": {
         "en": jsh.type_string,
         "cz": jsh.type_string,
@@ -17,9 +24,6 @@ heading_loc_schema = {
 
 # validate something
 
-import json
-import jsonschema
-import pprint
 
 object2validate = '''{
         "de": "German",

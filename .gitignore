@@ -5,3 +5,4 @@
 *.pyc
 /json_schema_helpers.egg-info
 /.test-deps-installed
+/.examples-deps-installed
