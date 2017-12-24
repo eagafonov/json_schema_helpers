@@ -20,6 +20,9 @@ list_of_strings = dict(type="array", items=[{"type": "string"}])
 list_of_numbers = dict(type="array", items=[type_number])
 
 
+def one_of(*args):
+    return dict(oneOf=list(args))
+
 # Complex
 def list_of(ref, minItems=None, maxItems=None, exactItems=None):
     d = dict(type="array", items=[{"$ref": "#/definitions/%s" % ref}])
